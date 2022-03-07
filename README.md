@@ -17,3 +17,5 @@ My discord rich presence
 13. Run `go mod tidy`
 14. Run `go build` (or `go run rpc.go` if you dont want to build)
 15. Every time you want the presence, run `rpc` (or `go run rpc.go` if you didnt built it)
+
+Powered by [rich-go](https://github.com/hugolgst/rich-go)
