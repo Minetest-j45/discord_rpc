@@ -39,6 +39,7 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println("Sleeping...")
+	fmt.Println("Running...")
 	time.Sleep(time.Hour * 1)
+	fmt.Println("Stopping...")
 }
