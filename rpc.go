@@ -97,6 +97,6 @@ func main() {
 	fmt.Println("Running...")
 	fmt.Println("Press Ctrl+C to exit, whenever you want")
 	for {
-		time.Sleep(time.Second * 5)
+		time.Sleep(time.Hour * 12)
 	}
 }
