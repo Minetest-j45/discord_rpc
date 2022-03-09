@@ -10,5 +10,7 @@
     "button_1": "My Website",
     "button_1_url": "https://j1233.minetest.land/",
     "button_2": "My GitHub",
-    "button_2_url": "https://github.com/Minetest-j45"
+    "button_2_url": "https://github.com/Minetest-j45",
+    "party_players": 1,
+    "max_players": 8
 }

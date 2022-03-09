@@ -23,6 +23,8 @@ type conf struct {
 	Button1Url   string `json:"button_1_url"`
 	Button2      string `json:"button_2"`
 	Button2Url   string `json:"button_2_url"`
+	PartyPlayers int    `json:"party_players"`
+	MaxPlayers   int    `json:"max_players"`
 }
 
 func openConf() conf {
@@ -72,26 +74,51 @@ func main() {
 			Url:   config.Button2Url,
 		})
 	}
+
 	err := client.Login(config.ClientID)
 	if err != nil {
 		panic(err)
 	}
 
-	now := time.Now()
-	err = client.SetActivity(client.Activity{
-		State:      config.State,
-		Details:    config.Details,
-		LargeImage: config.LargeID,
-		LargeText:  config.LargeImgText,
-		SmallImage: config.SmallID,
-		SmallText:  config.SmallImgText,
-		Timestamps: &client.Timestamps{
-			Start: &now,
-		},
-		Buttons: buttonsArr,
-	})
-	if err != nil {
-		panic(err)
+	if config.PartyPlayers > 0 && config.MaxPlayers > 0 {
+		now := time.Now()
+		err = client.SetActivity(client.Activity{
+			State:      config.State,
+			Details:    config.Details,
+			LargeImage: config.LargeID,
+			LargeText:  config.LargeImgText,
+			SmallImage: config.SmallID,
+			SmallText:  config.SmallImgText,
+			Party: &client.Party{
+				ID:         "-1",
+				Players:    config.PartyPlayers,
+				MaxPlayers: config.MaxPlayers,
+			},
+			Timestamps: &client.Timestamps{
+				Start: &now,
+			},
+			Buttons: buttonsArr,
+		})
+		if err != nil {
+			panic(err)
+		}
+	} else {
+		now := time.Now()
+		err = client.SetActivity(client.Activity{
+			State:      config.State,
+			Details:    config.Details,
+			LargeImage: config.LargeID,
+			LargeText:  config.LargeImgText,
+			SmallImage: config.SmallID,
+			SmallText:  config.SmallImgText,
+			Timestamps: &client.Timestamps{
+				Start: &now,
+			},
+			Buttons: buttonsArr,
+		})
+		if err != nil {
+			panic(err)
+		}
 	}
 
 	fmt.Println("Running...")

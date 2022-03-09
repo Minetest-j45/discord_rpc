@@ -98,6 +98,20 @@ The config file is a JSON file, so contains JSON data. The fields are as follows
 
 * Needed if `buttons` is `2`
 * Type: `string`
+<br>
+
+> `party_players`: The amount of players in your party.
+
+* Optional, unless `max_players` is set
+* Type: `int`
+* Must be greater than `0`
+<br>
+
+> `max_players`: The maximum amount of players in your party.
+
+* Optional, unless `party_players` is set
+* Type: `int`
+* Must be greater than `0`
 
 ### Example
 (This is the same as in `config.json.example`)
@@ -114,7 +128,9 @@ The config file is a JSON file, so contains JSON data. The fields are as follows
     "button_1": "My Website",
     "button_1_url": "https://j1233.minetest.land/",
     "button_2": "My GitHub",
-    "button_2_url": "https://github.com/Minetest-j45"
+    "button_2_url": "https://github.com/Minetest-j45",
+    "party_players": 1,
+    "max_players": 8
 }
 ```
 <br>
