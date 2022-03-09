@@ -8,10 +8,11 @@ Discord rich presence made easy
 4. Scroll down until you see the "Application ID" and click the copy button, for later use
 5. Go to the "Rich Presence" tab and scroll down to the "Rich Presence Assets" section
 6. Upload up to 2 images you want to use for your presence and name them (must be alphanumerical)
-7. [Configure your rich presence](#configuration)
-8. Run `go mod tidy`
-9. Run `go build` (or `go run rpc.go` if you dont want to build)
-10. Every time you want the presence, run `rpc` (or `go run rpc.go` if you didnt built it)
+7. Create a `config.json` file, wherever you cloned this repo to
+8. [Configure your rich presence](#configuration)
+9. Run `go mod tidy`
+10. Run `go build` (or `go run rpc.go` if you dont want to build)
+11. Every time you want the presence, run `rpc` (or `go run rpc.go` if you didnt built it)
 
 ## Configuration
 The config file is `config.json`.
