@@ -1,14 +1,14 @@
 {
-    "clientid": "950420436020240415",
+    "client_id": "950420436020240415",
     "state": "Powered by rich-go",
     "details": "A very difficult game",
-    "largeid": "pfpimg",
-    "largeimgtext": "pfp",
-    "smallid": "verifiedimg",
-    "smallimgtext": "verified",
+    "large_id": "pfpimg",
+    "large_img_text": "pfp",
+    "small_id": "verifiedimg",
+    "small_img_text": "verified",
     "buttons": 2,
-    "button1": "My Website",
-    "button1url": "https://j1233.minetest.land/",
-    "button2": "My GitHub",
-    "button2url": "https://github.com/Minetest-j45"
+    "button_1": "My Website",
+    "button_1_url": "https://j1233.minetest.land/",
+    "button_2": "My GitHub",
+    "button_2_url": "https://github.com/Minetest-j45"
 }

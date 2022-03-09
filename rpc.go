@@ -11,18 +11,18 @@ import (
 )
 
 type conf struct {
-	ClientID     string `json:"clientid"`
+	ClientID     string `json:"client_id"`
 	State        string `json:"state"`
 	Details      string `json:"details"`
-	LargeID      string `json:"largeid"`
-	LargeImgText string `json:"largeimgtext"`
-	SmallID      string `json:"smallid"`
-	SmallImgText string `json:"smallimgtext"`
+	LargeID      string `json:"large_id"`
+	LargeImgText string `json:"large_img_text"`
+	SmallID      string `json:"small_id"`
+	SmallImgText string `json:"small_img_text"`
 	Buttons      int    `json:"buttons"`
-	Button1      string `json:"button1"`
-	Button1Url   string `json:"button1url"`
-	Button2      string `json:"button2"`
-	Button2Url   string `json:"button2url"`
+	Button1      string `json:"button_1"`
+	Button1Url   string `json:"button_1_url"`
+	Button2      string `json:"button_2"`
+	Button2Url   string `json:"button_2_url"`
 }
 
 func openConf() conf {
@@ -49,7 +49,7 @@ func main() {
 	config := openConf()
 
 	if config.ClientID == "" {
-		fmt.Println("`clientid` is required in the config.json file")
+		fmt.Println("`client_id` is required in the config.json file")
 		os.Exit(1)
 	}
 
