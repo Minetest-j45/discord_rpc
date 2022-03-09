@@ -8,9 +8,10 @@ Discord rich presence made easy
 4. Scroll down until you see the "Application ID" and click the copy button, for later use
 5. Go to the "Rich Presence" tab and scroll down to the "Rich Presence Assets" section
 6. Upload up to 2 images you want to use for your presence and name them (must be alphanumerical)
-7. Run `go mod tidy`
-8. Run `go build` (or `go run rpc.go` if you dont want to build)
-9. Every time you want the presence, run `rpc` (or `go run rpc.go` if you didnt built it)
+7. [Configure your rich presence](#configuration)
+8. Run `go mod tidy`
+9. Run `go build` (or `go run rpc.go` if you dont want to build)
+10. Every time you want the presence, run `rpc` (or `go run rpc.go` if you didnt built it)
 
 ## Configuration
 The config file is `config.json`.
@@ -18,7 +19,7 @@ The config file is `config.json`.
 ### Format
 The config file is a JSON file, so contains JSON data. The fields are as follows:
 
-> `clientid`: The ID of your discord application
+> `client_id`: The ID of your discord application
 
 * Needed
 * Type: `string`
@@ -38,7 +39,7 @@ The config file is a JSON file, so contains JSON data. The fields are as follows
 * Type: `string`
 <br>
 
-> `largeid`: The name you gave to the image you uploaded to the discord application, that you want to be the larger image.
+> `large_id`: The name you gave to the image you uploaded to the discord application, that you want to be the larger image.
 
 * Optional
 * Type: `string`
@@ -46,14 +47,14 @@ The config file is a JSON file, so contains JSON data. The fields are as follows
 (See [Customization](#customization) step 6)
 <br>
 
-> `largeimgtext`: The text you want to be displayed when hovering over the larger image.
+> `large_img_text`: The text you want to be displayed when hovering over the larger image.
 <br>
 
 * Optional, even if you have a larger image
 * Type: `string`
 <br>
 
-> `smallid`: The name you gave to the image you uploaded to the discord application, that you want to be the smaller image.
+> `small_id`: The name you gave to the image you uploaded to the discord application, that you want to be the smaller image.
 
 * Optional
 * Type: `string`
@@ -61,7 +62,7 @@ The config file is a JSON file, so contains JSON data. The fields are as follows
 (See [Customization](#customization) step 6)
 <br>
 
-> `smallimgtext`: The text you want to be displayed when hovering over the smaller image.
+> `small_img_text`: The text you want to be displayed when hovering over the smaller image.
 
 * Optional, even if you have a smaller image
 * Type: `string`
@@ -74,44 +75,45 @@ The config file is a JSON file, so contains JSON data. The fields are as follows
 * Max value: `2`
 <br>
 
-> `button1`: The text of the first button.
+> `button_1`: The text of the first button.
 
 * Needed if `buttons` is greater than `0`
 * Type: `string`
 <br>
 
-> `button1url`: The URL of the first button.
+> `button_1_url`: The URL of the first button.
 
 * Needed if `buttons` is greater than `0`
 * Type: `string`
 <br>
 
-> `button2`: The text of the second button.
+> `button_2`: The text of the second button.
 
 * Needed if `buttons` is `2`
 * Type: `string`
 <br>
 
-> `button2url`: The URL of the second button.
+> `button_2_url`: The URL of the second button.
 
 * Needed if `buttons` is `2`
 * Type: `string`
 
 ### Example
+(This is the same as in `config.json.example`)
 ```json
 {
-    "clientid": "950420436020240415",
+    "client_id": "950420436020240415",
     "state": "Powered by rich-go",
     "details": "A very difficult game",
-    "largeid": "pfpimg",
-    "largeimgtext": "pfp",
-    "smallid": "verifiedimg",
-    "smallimgtext": "verified",
+    "large_id": "pfpimg",
+    "large_img_text": "pfp",
+    "small_id": "verifiedimg",
+    "small_img_text": "verified",
     "buttons": 2,
-    "button1": "My Website",
-    "button1url": "https://j1233.minetest.land/",
-    "button2": "My GitHub",
-    "button2url": "https://github.com/Minetest-j45"
+    "button_1": "My Website",
+    "button_1_url": "https://j1233.minetest.land/",
+    "button_2": "My GitHub",
+    "button_2_url": "https://github.com/Minetest-j45"
 }
 ```
 <br>
